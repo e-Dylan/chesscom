@@ -2,3 +2,6 @@
 export const Draggables = {
   PIECE: "piece",
 };
+
+export const emptyStartString = "emememememememememememememememememememememememememememememememememememememememememememememememememememememememememememememememem";
+export const gameStartString = "brbnbbbqbkbbbnbrbpbpbpbpbpbpbpbpememememememememememememememememememememememememememememememememwpwpwpwpwpwpwpwpwrwnwbwqwkwbwnwr";
