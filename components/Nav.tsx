@@ -5,7 +5,7 @@ import NavButton from "./NavButton";
 import NavButtonSmall from "./NavButtonSmall";
 
 const Nav = () => {
-  const [navWidth, setNavWidth] = useState("10rem");
+  const [navWidth, setNavWidth] = useState<string>("10rem");
   return (
     <Flex
       fontFamily="Segoe UI"
