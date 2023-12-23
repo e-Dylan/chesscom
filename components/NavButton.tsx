@@ -5,18 +5,19 @@ interface Props {
   text: string;
   leftIcon?: any;
   href?: string;
+  color?: string;
 }
 
-const NavButton = ({ text, leftIcon, href }: Props) => {
+const NavButton = ({ text, leftIcon, href, color }: Props) => {
   return (
     <Flex
       as="a"
       href={href}
       fontWeight="700"
-      fontSize="14px"
-      color={theme.colors.offwhite}
-      minH="42px"
-      p="4px 0 4px 10px"
+      fontSize="16px"
+      color={color || theme.colors.offwhite}
+      minH="44px"
+      p="6px 0 6px 10px"
       min-width="4rem"
       alignItems="center"
       _hover={{ bg: theme.colors.bg3 }}

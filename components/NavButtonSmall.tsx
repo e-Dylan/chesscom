@@ -13,7 +13,7 @@ const NavButtonSmall = ({ text, leftIcon, href }: Props) => {
       as="a"
       href={href}
       fontWeight="700"
-      fontSize="11px"
+      fontSize="13px"
       color={theme.colors.transparentWhite}
       minH="32px"
       p="0 0 0 10px"

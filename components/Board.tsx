@@ -7,18 +7,12 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { emptyStartString, gameStartString } from "@/constants";
 
 const Board = () => {
-  const [nums, setNums] = useState<number[]>([]);
   const [squares, setSquares] = useState<any[]>([]);
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   const [boardH, setBoardH] = useState<number>(0);
   const boardRef = useRef<any>();
-  //   const squares = [];
+
   const initBoard = (gameString: string) => {
-    // const newNums = [];
-    // for (var i = 0; i < 64; i++) {
-    //   newNums.push(i);
-    // }
-    // setNums(newNums);
     const newSquares: any[] = [];
     const squareArr = gameString.match(/.{1,2}/g);
     for (var i = 0; i < 64; i++) {
@@ -53,8 +47,6 @@ const Board = () => {
 
     const newSquares = [...squares];
 
-    // alert(squares[from]?.piece);
-
     newSquares[to].piece = squares[from].piece;
     newSquares[from].piece = "em";
     setSquares(newSquares);
@@ -62,9 +54,15 @@ const Board = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <Flex flexWrap="wrap" ref={boardRef} w="60%" h={boardH}>
+      <Flex
+        flexWrap="wrap"
+        ref={boardRef}
+        my="10px"
+        w="60%"
+        h={boardH}
+        rounded="10rem"
+      >
         {squares.map((square, i) => {
-          const squareXY: number[] = [square?.x, square?.y];
           let pieceName: string = square?.piece;
 
           return (
@@ -72,7 +70,8 @@ const Board = () => {
               black={(square?.x + square?.y) % 2 === 1}
               key={i}
               i={i}
-              squareXY={squareXY}
+              x={square?.x}
+              y={square?.y}
               pieceName={pieceName}
               movePiece={movePiece}
             ></Square>

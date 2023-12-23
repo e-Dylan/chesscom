@@ -3,6 +3,8 @@ import { Box, Button, Flex, Input } from "@chakra-ui/react";
 import { useState } from "react";
 import NavButton from "./NavButton";
 import NavButtonSmall from "./NavButtonSmall";
+import chessComLogoSrc from "@/images/chesscom-logo-dark.png";
+import Image from "next/image";
 
 const Nav = () => {
   const [navWidth, setNavWidth] = useState<string>("10rem");
@@ -24,8 +26,15 @@ const Nav = () => {
           minH="50px"
           color={theme.colors.offwhite}
           m="4px 0 0"
+          w="100%"
+          p="10px 16px 10px 16px"
+          _hover={{ bg: theme.colors.bg3 }}
         >
-          Chess.com
+          <Image
+            src={chessComLogoSrc}
+            style={{ width: "100%", height: "auto" }}
+            alt="Chess"
+          />
         </Button>
         <NavButton text="Play" href="/play" leftIcon="black" />
         <NavButton text="Puzzles" href="/puzzles" leftIcon="black" />
@@ -34,7 +43,12 @@ const Nav = () => {
         <NavButton text="News" href="/news" leftIcon="black" />
         <NavButton text="Social" href="/social" leftIcon="black" />
         <NavButton text="More" href="/more" leftIcon="black" />
-        <NavButton text="Free Trial" href="/freetrial" leftIcon="black" />
+        <NavButton
+          text="Free Trial"
+          href="/freetrial"
+          leftIcon="black"
+          color={theme.colors.blue}
+        />
         <Box m="4px 10px 12px 10px">
           <Input
             placeholder="Search"
@@ -46,13 +60,15 @@ const Nav = () => {
             _hover={{ borderColor: "hsla(0,0%,100%,.3)" }}
             _focus={{ borderColor: "hsla(0,0%,100%,.3)" }}
             outline="none"
-            rounded="2px"
+            rounded="3px"
             color="hsla(0, 0%, 100%, .72)"
-            fontSize="12px"
+            fontSize="13px"
+            fontWeight="400"
+            _placeholder={{ color: "hsla(0, 0%, 100%, .5)" }}
           />
         </Box>
       </Flex>
-      <Flex flexDir="column" textAlign="left">
+      <Flex flexDir="column" textAlign="left" m="auto 0 2.5rem">
         <NavButtonSmall text="Light UI" href="/home" leftIcon="black" />
         <NavButtonSmall text="Collapse" href="/home" leftIcon="black" />
         <NavButtonSmall text="Settings" href="/home" leftIcon="black" />
