@@ -5,9 +5,13 @@ import NavButton from "./NavButton";
 import NavButtonSmall from "./NavButtonSmall";
 import chessComLogoSrc from "@/images/chesscom-logo-dark.png";
 import Image from "next/image";
+import PrimaryButton from "./PrimaryButton";
 
-const Nav = () => {
-  const [navWidth, setNavWidth] = useState<string>("10rem");
+interface Props {
+  navWidth: string;
+}
+
+const Nav = ({ navWidth }: Props) => {
   return (
     <Flex
       fontFamily="Segoe UI"
@@ -67,6 +71,7 @@ const Nav = () => {
             _placeholder={{ color: "hsla(0, 0%, 100%, .5)" }}
           />
         </Box>
+        <PrimaryButton text="Log In" />
       </Flex>
       <Flex flexDir="column" textAlign="left" m="auto 0 2.5rem">
         <NavButtonSmall text="Light UI" href="/home" leftIcon="black" />

@@ -9,7 +9,10 @@ const theme = extendTheme({
     blue: "#009fd9",
     transparentWhite: "hsla(0,0%,100%,.5);",
     lightSquare: "#edeed1",
-    darkSquare: "#779952"
+    darkSquare: "#779952",
+    greenPrimary: "#81b64c",
+    greenSecondary: "#81b64c",
+    greenTertiary: "#5d9948",
   },
 });
 
